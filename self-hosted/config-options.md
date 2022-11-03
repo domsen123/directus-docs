@@ -271,6 +271,21 @@ All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.co
 
 :::
 
+## Request
+
+| Variable                      | Description                                                                                                                                                                     | Default Value   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `REQUEST_PROXY`               | Use `false` to disable request proxies, ignoring environment variables - use system proxy. **Required** to set to `true` when below `REQUEST_PROXY_*` variables are configured. | `false`         |
+| `REQUEST_PROXY_PROTOCOL`      | If the proxy server uses HTTPS, then you must set the protocol to `https` otherwise `http` is used.                                                                             | --              |
+| `REQUEST_PROXY_HOST`          | Defines the proxy host.                                                                                                                                                         | --              |
+| `REQUEST_PROXY_PORT`          | Defines the proxy port.                                                                                                                                                         | --              |
+| `REQUEST_PROXY_AUTH_USERNAME` | **Required** if `REQUEST_PROXY_AUTH_PASSWORD` is set. The username for proxy authorization.                                                                                     | --              |
+| `REQUEST_PROXY_AUTH_PASSWORD` | **Required** if `REQUEST_PROXY_AUTH_USERNAME` is set. The password for proxy authorization.                                                                                     | --              |
+| `REQUEST_TIMEOUT`             | Specifies the number of milliseconds before the request times out. If the request takes longer than `timeout`, the request will be aborted.                                     | `1000 * 60 * 3` |
+| `REQUEST_MAX_REDIRECTS`       | Defines the maximum number of redirects to follow in node.js. If set to 0, no redirects will be followed.                                                                       | `5`             |
+
+:::
+
 ## Security
 
 | Variable                         | Description                                                                                                                                                      | Default Value            |
